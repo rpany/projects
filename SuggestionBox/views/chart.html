@@ -1,0 +1,43 @@
+
+<nav-bar></nav-bar>
+<div class="chart-container" ng-controller="ChartController">
+	<div class="col-lg-6 col-sm-12" id="line-chart">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Total Infections Across Facility</div>
+			<div class="panel-body">
+				<canvas id="line" class="chart chart-line" chart-data="data"
+					chart-labels="labels" chart-legend="true" chart-click="onClick"
+					chart-hover="onHover" chart-series="series"></canvas>
+
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-sm-12 code">
+		<div class="panel panel-default" ng-controller="PatientController">
+			<div class="panel-heading">Patients</div>
+			<div class="panel-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>DOB</th>
+							<th>Location</th>
+							<th>Diagnosis</th>
+					</thead>
+					<tbody ng-repeat="patient in patients">
+						<tr>
+							<td>{{patient.firstName}} {{patient.lastName}}</td>
+							<td>{{patient.dob | date}} </td>
+							<td>{{patient.location }} </td>
+							<td>{{patient.diagnosis}} </td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+

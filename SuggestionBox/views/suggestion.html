@@ -1,0 +1,23 @@
+<nav-bar></nav-bar>
+<div class="container">
+
+	<div ng-repeat="comment in post.comments">
+		<div class="panel">
+		
+			<div class="panel-body">
+				<p>{{comment.title}}</p>
+				
+			</div>
+		</div>
+	</div>
+	<div>
+		<form ng-submit="addComment()" style="margin-top: 50px">
+			<h3>Submit Your Comment</h3>
+			<div class="form-group">
+				<input type="text" class="form-control"
+					placeholder="Great comments here" ng-model="comment"></input>
+			</div>
+			<button type="submit" class="btn btn-primary">Suggest</button>
+		</form>
+	</div>
+</div>
